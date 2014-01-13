@@ -1,0 +1,45 @@
+body {
+    padding-left: 17em;
+    font-family: Georgia, "Times New Roman",
+    Times, serif;
+    color: purple;
+    background-color: #C3D6EE
+}
+#order_form {
+    width: 200px;
+    height: 55px;
+    padding: 0;
+    border: 0;
+    float: right;
+    background-color: #6699FF;
+}
+
+input.order_btn
+{
+    width: 200px;
+    height: 55px;
+    border-radius:20px/24px;
+    margin: 10px;
+    text-align: center;
+    color: #000000;
+    background-color: #86B4F0;
+}
+#back_call
+{
+    float: right;
+    margin: 5px;
+    color: #000000;
+    padding: 30px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+h1
+{
+    color: #000000;
+
+}
+@font-face {
+    font-family: "ogil";
+    src: local("kuritza.ttf");
+}
