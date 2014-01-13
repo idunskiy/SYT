@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="css/styles.css">
     <!-- // CSS Reset – http://meyerweb.com/eric/tools/css/reset/ -->
     <link rel="stylesheet" type="text/css" href="css/reset.css" media="all">
-
-
     <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
 
 
@@ -26,14 +24,42 @@
             s.parentNode.insertBefore(link_element, s);
         })();
     </script>
+
+    <script src = "js_client.js"></script>
+    <script src="jquery.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            $('#submit').click(function(){
+
+                $.post("send.php", $("#mycontactform").serialize(),  function(response) {
+                    $('#success').html(response);
+//$('#success').hide('slow');
+                });
+                return false;
+
+            });
+
+        });
+    </script>
+
 </head>
 <body>
+    <div id =  "header ">
         <div id="logo">
         <img src="logo.png" alt="saveyourtime logo"  width="260" height="100">
         </div>
+        <div id = "tel" align = "right"
+             >
+              <img src="mts.png" alt="life">093 811 10 14<br>
+            <img src="mts.png" alt="mts">066 321 11 61<br>
+            <img src="mts.png" alt="kievstar">098 411 11 31
+             </div>
 
+    </div>
      <h1 align = "center" font-family = "ogil"> Разработка и сопровождение дипломных, курсовых, контрольных работ любой сложности</h1>
-    <div id="aim_text" >
+    <div id="aim_text" align = "center" >
         <p >Устали от бесконечного колеса Сансары ?
             Надоел цикл смертей и перерождений ? Звоните, мы Вам поможем ?</p>
     </div>
@@ -42,7 +68,7 @@
             <form action="http://saveyourtime.com.ua/zakazat-rabotu.html"
                   align = "center"
                     >
-                <input  class="order_btn" type="submit" value="Заказать работу"                     >
+                <input  class="order_btn" type="submit" value="Заказать работу сейчас !"                     >
             </form>
         </div>
 
@@ -55,13 +81,6 @@
             </p>
         </div>
 
-        <div id = "back_call"
-                >
-            <p> Не хотите звонить нам ? Давайте мы позвоним Вам !</p>
-            <form>
-                Ваше имя <input type="text"  name="firstname"><br>
-                Ваш телефон <input type="tel" name="lastname">
-            </form>
-                </div>
+    <table align="center" border="0" width="500"> <tr> <td>To:</td><td><input type="text" size="30" id="to" /><div style="display: none;" id="error-to"><font color="#FF0000">Insert email address!</font></div></td> </tr> <tr> <td>From:</td><td><input type="text" size="30" id="from" /><div style="display: none;" id="error-from"><font color="#FF0000">Your email/name here!</font></div></td> </tr> <tr> <td>Subject:</td><td><input type="text" size="30" id="subject" /><div style="display: none;" id="error-subject"><font color="#FF0000">Enter subject!</font></div></td> </tr> <tr> <td colspan="2"><textarea id="content" rows="9" cols="59"></textarea></td> </tr> <tr> <td width="10%"><input type="button" id="submit-button" value="Send" /></td> <td> <div style="display: none;" id="loading"><img src="loading.gif" /> <font color="#FF0000">Sending..</font></div> <div style="display: none;" id="message-sent"><font color="#008040">Message sent!</font></div> <div style="display: none;" id="error-content"><font color="#FF0000">Please enter come content!</font></div> </td> </tr> </table> - See more at: http://webta.lk/php-tutorials/78-sending-emails-php-jquery.html#sthash.Q85BFHc5.dpuf
 </body>
 </html>
